@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>DeKey demo</title>
+    <script src="./js/crypto-js.js"></script>
+    <script src="./js/secrets.js"></script>
+    <script src="./js/main.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
+</head>
+<body>
+    <div id="loadingSpinner" class="spinner" style="display:none;"></div>
+
+    <h1>DeKey demo</h1>
+
+    <p>1. Select file to encrypt:</p>
+    <input type="file" id="fileInput">
+    <button onclick="encryptFile()">Encrypt and Download</button>
+
+    <p>2. Secret key (will be filled with encryption key):</p>
+    <input type="text" id="secret" style="width:300px;">
+    <p>Number of nodes:</p>
+    <input type="number" id="numShares" value="5" style="width:50px;">
+    <p>Threshold:</p>
+    <input type="number" id="threshold" value="3" style="width:50px;">
+    <button onclick="splitSecret()">Split secret</button>
+
+    <p>3. Comma-delimited split string:</p>
+    <textarea id="shares" rows="4" style="width:300px;"></textarea>
+
+    <button onclick="recoverSecret()">Restoring secrets</button>
+    <p>4. Restored string:</p>
+    <input type="text" id="recoveredSecret" style="width:300px;">
+
+    <p>5. Select encrypted file to decrypt:</p>
+    <input type="file" id="fileInputDecrypt">
+    <button onclick="decryptFile()">Decrypt and Download</button>
+</body>
+</html>
